@@ -1,6 +1,7 @@
 // 👉 You’re given an array of intervals where intervals[i] = [start, end].
 // Merge all overlapping intervals and return the result.
-// // touching intervals count as overlapping
+// touching intervals count as overlapping
+// it's assumed that the tuples are sorted so the start always come first
 
 import { log } from "console";
 
