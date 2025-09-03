@@ -14,7 +14,6 @@ const matchingStrings = (strings: string[], queries: string[]): number[] => {
   strings.forEach((str) => {
     count.set(str, (count.get(str) || 0) + 1);
   });
-  log(count);
   queries.forEach((entry) => {
     if (count.has(entry)) results.push(count.get(entry));
     else results.push(0);
@@ -42,6 +41,6 @@ log(
     ],
     ["abcde", "sdaklfj", "asdjf", "na", "basdn"]
   )
-); // expected output : [1,3,4,3,2
+); // expected output : [1,3,4,3,2]
 
 log(matchingStrings(["def", "de", "fgh"], ["de", "lmn", "fgh"])); // expected output : [1,0,1]
