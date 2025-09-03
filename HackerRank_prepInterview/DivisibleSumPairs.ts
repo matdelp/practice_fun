@@ -8,7 +8,6 @@ import { log } from "console";
 const divisibleSumPairs = (n: number, k: number, ar: number[]): number => {
   if (n < 2) return 0;
   const sortedAr = ar.sort((a, b) => a - b);
-  log({ sortedAr });
   let count = 0;
 
   ar.forEach((nbr, i) => {
