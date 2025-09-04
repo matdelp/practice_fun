@@ -8,7 +8,7 @@
 import { log } from "console";
 
 const matchingStrings = (strings: string[], queries: string[]): number[] => {
-  if (strings.length === 0) return [];
+  if (strings.length === 0 || queries.length === 0) return [];
   let results: number[] = [];
   const count = new Map();
   strings.forEach((str) => {
