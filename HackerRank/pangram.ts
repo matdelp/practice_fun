@@ -1,22 +1,18 @@
-const ALPHABET = "abcdefghijklmnopqrstuvwxyz".split("");
-
 const pangrams = (s: string): "pangram" | "not pangram" => {
+  const records: Record<string, boolean> = {};
   const str = s
     .toLowerCase()
     .split("")
     .filter((c) => c !== " ");
-  console.log(str);
-  if (str.length < 26) return "not pangram";
-  for (const letter of ALPHABET) {
-    if (!str.includes(letter)) {
-      return "not pangram";
-    }
-  }
-  return "pangram";
+  str.forEach((letter) => {
+    records[letter] = true;
+  });
+
+  if (Object.keys(records).length === 26) return "pangram";
+  return "not pangram";
 };
 
 console.log(
   pangrams("We promptly judged antique ivory buckles for the next prize")
 ); //pangram
 console.log(pangrams("We promptly judged antique ivory buckles for the prize")); //not pangram
-console.log(pangrams("We promptly")); //not pangram
