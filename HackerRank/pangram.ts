@@ -1,11 +1,8 @@
 const pangrams = (s: string): "pangram" | "not pangram" => {
   const records: Record<string, boolean> = {};
-  const str = s
-    .toLowerCase()
-    .split("")
-    .filter((c) => c !== " ");
+  const str = s.toLowerCase().split("");
   str.forEach((letter) => {
-    records[letter] = true;
+    if (letter !== " ") records[letter] = true;
   });
 
   if (Object.keys(records).length === 26) return "pangram";
